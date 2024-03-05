@@ -13,6 +13,17 @@ namespace WiredBrainCoffee.StorageApp.Repositories
         private readonly List<Employee> _employee = new();
         public void Add(Employee employee)  => _employee.Add(employee);
 
+        public void Save(Employee employee)
+        {
+            Console.WriteLine(employee);
+        }
 
+        internal void Save()
+        {
+            foreach(var employee in _employee)
+            {
+                Console.WriteLine(employee);
+            }
+        }
     }
 }

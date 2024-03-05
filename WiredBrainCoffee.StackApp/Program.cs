@@ -12,16 +12,14 @@ public class Program
 
     private static void StackStrings()
     {
-        var stack = new SimpleStack();
+        var stack = new SimpleStack<string>();
         stack.Push("Weird Coffe");
-        stack.Push("Sweets");
-        stack.Push(true);
-        stack.Push(new object()); //creates a new instance of the object class
+        stack.Push("Sweets"); 
     }
 
     private static void StackDoubles()
     {
-        var stack = new SimpleStack();
+        var stack = new SimpleStack<double>();
         stack.Push(1.2);
         stack.Push(2.2);
         stack.Push(3.2);

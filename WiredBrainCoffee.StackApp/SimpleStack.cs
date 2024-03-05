@@ -1,15 +1,15 @@
 ﻿using System;
 
-public class SimpleStack
+public class SimpleStack<TItem>
 {
-    private readonly object[] _items;
+    private readonly TItem[] _items;
     private int _curentIndex = -1;
     //public SimpleStack()
     //{
     //    _items = new double[10];
     //}
 
-    public SimpleStack() => _items = new object[10]; //experion body
+    public SimpleStack() => _items = new TItem[10]; //experion body
 
     //public void Push(double item)
     //{
@@ -18,7 +18,7 @@ public class SimpleStack
     //}
 
     public int Count => _curentIndex + 1;
-    public void Push(object item) => _items[++_curentIndex] = item;
+    public void Push(TItem item) => _items[++_curentIndex] = item;
 
-    public object Pop => _items[_curentIndex--];
+    public TItem Pop => _items[_curentIndex--];
 }

@@ -9,7 +9,7 @@ employeeRepository.Add(new Employee { FirstName = "Robert" });
 employeeRepository.Add(new Employee { FirstName = "Alexa" });
 employeeRepository.Save();
 
-var organizationRepository = new GenericRepository<Organization>();
+var organizationRepository = new GenericRepository<Organization, Guid>();
 organizationRepository.Add(new Organization { Name = "Non-profit" });
 organizationRepository.Save();
 

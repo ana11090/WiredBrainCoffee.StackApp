@@ -9,7 +9,7 @@ namespace WiredBrainCoffee.StorageApp.Repositories
 {
     public class GenericRepository<T>
     { 
-        private readonly List<T> _item = new();
+        protected readonly List<T> _item = new();
         public void Add(T item)  => _item.Add(item);
 
         public void Save(T item)
@@ -23,6 +23,23 @@ namespace WiredBrainCoffee.StorageApp.Repositories
             {
                 Console.WriteLine(item);
             }
+        }
+    }
+
+
+    public class EmployeeRepositoryWithRemove : GenericRepository<Employee>
+    { 
+        public void Remove(Employee employee)
+        {
+            _item.Remove(employee);
+        }
+    }
+
+    public class GenericRepositoryWithRemove<T> : GenericRepository<T>
+    {
+        public void Remove(T item)
+        {
+            _item.Remove(item);
         }
     }
 }

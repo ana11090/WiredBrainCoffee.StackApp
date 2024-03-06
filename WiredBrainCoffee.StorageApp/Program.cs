@@ -2,7 +2,7 @@
 
 using WiredBrainCoffee.StorageApp.Repositories;
  
-var employeeRepository = new GenericRepository<Employee>();
+var employeeRepository = new GenericRepositoryWithRemove<Employee>();
 
 employeeRepository.Add(new Employee { FirstName = "Julia" });
 employeeRepository.Add(new Employee { FirstName = "Robert" });

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,10 +8,19 @@ using WiredBrainCoffee.StorageApp.Entities;
 
 namespace WiredBrainCoffee.StorageApp.Repositories
 {
-    public class GenericRepository<T>
+    public class GenericRepository<T> where T : EntityBase
     { 
         protected readonly List<T> _item = new();
-        public void Add(T item)  => _item.Add(item);
+        public T GetById(int id)
+        {
+            return _item.Single(_item => _item.ID == id);
+        }
+
+        public void Add(T item)
+        {
+            item.ID =_item.Any() ? _item.Max(item => item.ID) + 1 : 1;
+            _item.Add(item);
+        }
 
         public void Save(T item)
         {

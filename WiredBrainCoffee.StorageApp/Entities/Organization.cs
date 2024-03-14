@@ -6,13 +6,10 @@ using System.Threading.Tasks;
 
 namespace WiredBrainCoffee.StorageApp.Entities
 {
-    public class Organization
-    {
-        public int ID { get; set; }
+    public class Organization : EntityBase
+    { 
         public string? Name { get; set; }
 
         public override string ToString() => $"ID: {ID}, Name: {Name}";
-    }
-
-
+    } 
 }

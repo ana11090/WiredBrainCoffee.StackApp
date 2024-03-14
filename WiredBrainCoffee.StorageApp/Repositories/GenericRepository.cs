@@ -8,7 +8,7 @@ using WiredBrainCoffee.StorageApp.Entities;
 
 namespace WiredBrainCoffee.StorageApp.Repositories
 {
-    public class GenericRepository<T> where T : class, IEntityBase
+    public class GenericRepository<T> where T : class, IEntityBase, new()
     {
         protected readonly List<T> _item = new();
 

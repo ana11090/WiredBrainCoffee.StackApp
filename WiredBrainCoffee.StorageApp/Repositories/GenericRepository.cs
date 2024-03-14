@@ -27,19 +27,5 @@ namespace WiredBrainCoffee.StorageApp.Repositories
     }
 
 
-    public class EmployeeRepositoryWithRemove : GenericRepository<Employee>
-    { 
-        public void Remove(Employee employee)
-        {
-            _item.Remove(employee);
-        }
-    }
-
-    public class GenericRepositoryWithRemove<T> : GenericRepository<T>
-    {
-        public void Remove(T item)
-        {
-            _item.Remove(item);
-        }
-    }
+  
 }
